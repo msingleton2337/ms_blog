@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  # Name of the Articles database
+  articles:
+    image: 'postgres:latest'
+    ports:
+      - 5432:5432
+
+    environment:
+      POSTGRES_USER: postgres # The PostgreSQL uset to connect to the database with
+      POSTGRES_PASSWORD: password # The PostgreSQL password
+      POSTGRES_DB: default_database # The PostgreSQL default database
+
+    volumes:
+      - ./db-data/:/var/lib/postgresql/data/
