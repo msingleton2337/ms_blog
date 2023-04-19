@@ -25,8 +25,11 @@ Currently the API is set up to read, add, and delete user data from MongoDB.
 Clone Repository then:
 ```Console
 cd ms_blog/src/userauthentication
+pipenv sync
 pipenv shell
-pipenv install
+```
+Next:
+```Console
 uvicorn app.server.app:app --host localhost --port 8000 --reload
 ```
 Go to (http://localhost:8000/docs#/) to test the API using swagger.
