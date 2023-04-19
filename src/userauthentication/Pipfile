@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 fastapi = "*"
 uvicorn = "*"
+email-validator = "*"
+pydantic = "*"
+motor = "*"
 
 [dev-packages]
 
