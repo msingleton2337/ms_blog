@@ -15,6 +15,7 @@ type Article struct {
   contents	string
 }
 
+// Creates a connection to the Postgres database using hardcoded information
 func connectDB( database *sql.DB, err error ) int {
   const db_type string = "postgres"
   const host string = "localhost"
@@ -28,24 +29,26 @@ func connectDB( database *sql.DB, err error ) int {
                      host, port, user, password, db_name )
 
   database, err = sql.Open( db_type, sqldb_connect_string )
-  CheckError( err )
+  checkError( err )
 
   defer database.Close()
 
   err = database.Ping()
-  return CheckError( err )
+  return checkError( err )
 } 
 
+// Inserts an Article object into the Articles database
 func insertDB( database *sql.DB, err error, article Article ) int {
   var insert_statement string = 
         fmt.Sprintf( `insert into "Articles" ("id", "author", "title", "description", "keywords", "contents") values( $1, $2, $3, $4, $5, $6 )` )
 
   _, err = database.Exec( insert_statement, article.id, article.author, article.title, article.description,
                         article.keywords, article.contents )
-  return CheckError( err )
+  return checkError( err )
 }
 
-func CheckError( err error ) int {
+// Prints an error message
+func checkError( err error ) int {
   if err != nil {
     panic( err )
   }
