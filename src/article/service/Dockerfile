@@ -2,12 +2,12 @@ FROM golang:1.20
 
 WORKDIR /app
 
-COPY go.mod go.sum ./
+COPY go.mod ./
 
 RUN go mod download
 
-COPY * .go ./
+COPY *.go ./
 
-RUN CGO_ENABLED=0 GOOS=linux go build -o /docker-article-svc
+RUN go build -o /docker-article-svc
 
 CMD ["/docker-article-svc"]
