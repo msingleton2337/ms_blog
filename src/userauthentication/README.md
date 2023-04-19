@@ -24,7 +24,7 @@ Currently the API is set up to read, add, and delete user data from MongoDB.
 
 Clone Repository then:
 ```Console
-cd src/userauthentication
+cd ms_blog/src/userauthentication
 pipenv shell
 pipenv install
 uvicorn app.server.app:app --host localhost --port 8000 --reload
