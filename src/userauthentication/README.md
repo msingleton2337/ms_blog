@@ -23,13 +23,18 @@ Currently the API is set up to read, add, and delete user data from MongoDB.
 
 ### To Run:
 
-Clone Repository then:
+Start up MongoDB:
+```Console
+cd ms_blog/src/userauthentication
+docker compose up -d
+```
+Install packages and activate the Pipenv shell:
 ```Console
 cd ms_blog/src/userauthentication
 pipenv sync
 pipenv shell
 ```
-Next:
+Start up FastAPI Server:
 ```Console
 uvicorn app.server.app:app --host localhost --port 8000 --reload
 ```
