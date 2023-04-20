@@ -15,15 +15,15 @@ The following steps require the usage of a command line terminal.
 docker compose up
 ```
 2. To run the application, navigate to ms_blog/src/article/service
-2. a. To install a containerized version of the application, 
+2) a. To install a containerized version of the application, 
 ```bash
 run: docker build -t docker-article-svc .
 ```
-2. b. To run independently, run: 
+2) b. To run independently, run: 
 ```bash
 go run main
 ```
-2. c. To run the unit tests, run: 
+2) c. To run the unit tests, run: 
 ```bash
 go test *.go
 ```
