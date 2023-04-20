@@ -4,6 +4,7 @@ This Microservice provides User Authentication and Authorization to the Blogging
 ### TODO: 
 - Add useful and intuitive API endpoints 
 - Implement update functionality to CRUD API for user data
+- Implement unittesting for CRUD operations
 - Update documentation and directory heirachy for readability
 - Implement Authentication and Authorization using JWTs (JSON Web Tokens)
 - Containerize the microservice with Kubernetes
