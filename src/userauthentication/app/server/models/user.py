@@ -1,19 +1,21 @@
 from pydantic import BaseModel, EmailStr, Field
 
-# Schema for how User datat will be stored in the MongoDB database.
 class UserSchema(BaseModel):
+    '''Schema for User data'''
     username: str = Field(...)
     password: str = Field(...)
     email: EmailStr = Field(...)
 
-# Schema for a valid(desired) response
+
 def ResponseModel(data, message):
+    '''Schema for a valid(desired) response'''
     return {
         "data": [data],
         "code": 200,
         "message": message,
     }    
 
-# Schema for error response 
+
 def ErrorResponseModel(error, code, message):
+    '''Schema for error response'''
     return {"error": error, "code": code, "message": message}
