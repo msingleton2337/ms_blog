@@ -1,3 +1,4 @@
+from typing import Optional
 from pydantic import BaseModel, EmailStr, Field
 
 class UserSchema(BaseModel):
@@ -5,7 +6,14 @@ class UserSchema(BaseModel):
     username: str = Field(...)
     password: str = Field(...)
     email: EmailStr = Field(...)
+    role: str = Field(...)
 
+
+class UpdateUserModel(BaseModel):
+    username: Optional[str]
+    password: Optional[str]
+    email: Optional[EmailStr]
+    role: Optional[str]
 
 def ResponseModel(data, message):
     '''Schema for a valid(desired) response'''

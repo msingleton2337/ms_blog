@@ -14,7 +14,8 @@ def user_helper(user) -> dict:
         "id": str(user["_id"]),
         "username": user["username"],
         "password": user["password"],
-         "email": user["email"],
+        "email": user["email"],
+        "role": user["role"],
     }
 
 
@@ -44,7 +45,6 @@ async def retrieve_user(id: str) -> dict:
     user = await user_collection.find_one({"_id": ObjectId(id)})
     if user:
         return user_helper(user)
-
 
 async def update_user(id: str, data: dict):
     '''Update a user with a matching ID'''
